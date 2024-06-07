@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -9,9 +10,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/crear-jornada', [AdminController::class, 'create'])->middleware(['auth', 'verified'])->name('jornada.create');
 
 
 Route::middleware('auth')->group(function () {

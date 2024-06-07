@@ -17,6 +17,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Administrador') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('jornada.create')" :active="request()->routeIs('jornada.create')">
+                        {{ __('Crear Jornada') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -90,6 +93,10 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <x-responsive-nav-link :href="route('jornada.create')">
+                    {{ __('Crear Jornada') }}
+                </x-responsive-nav-link>
+
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Perfil') }}
                 </x-responsive-nav-link>
