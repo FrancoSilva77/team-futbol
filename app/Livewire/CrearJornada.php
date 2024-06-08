@@ -2,12 +2,17 @@
 
 namespace App\Livewire;
 
+use App\Models\Color;
 use Livewire\Component;
 
 class CrearJornada extends Component
 {
+
     public function render()
     {
-        return view('livewire.crear-jornada');
+        $colores = Color::all();
+        return view('livewire.crear-jornada', [
+            'colores' => $colores
+        ]);
     }
 }

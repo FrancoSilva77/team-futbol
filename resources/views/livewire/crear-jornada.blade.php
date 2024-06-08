@@ -18,6 +18,10 @@
         <select name="color" id="color"
             class="border-gray-300 focus:border-green-500 focus:ring-green-500 rounded-md shadow-sm w-full">
             <option value="">-- Seleccione --</option>
+
+            @foreach ($colores as $color)
+                <option value="{{ $color->id }}">{{ $color->color }}</option>
+            @endforeach
         </select>
 
         <x-input-error :messages="$errors->get('color')" class="mt-2" />
