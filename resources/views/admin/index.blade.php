@@ -14,11 +14,7 @@
                 </div>
             @endif
 
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    Mis Juegos / Admin
-                </div>
-            </div>
+            @livewire('mostrar-jornadas')
         </div>
     </div>
 </x-app-layout>

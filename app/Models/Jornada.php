@@ -9,6 +9,8 @@ class Jornada extends Model
 {
     use HasFactory;
 
+    protected $casts = ['fecha'=> 'date'];
+
     protected $fillable = [
         'jornada',
         'equipo_contrario',
@@ -18,4 +20,14 @@ class Jornada extends Model
         'fecha',
         'user_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class, 'color_id');
+    }
 }
