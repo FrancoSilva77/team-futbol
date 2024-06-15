@@ -6,9 +6,11 @@
                 <div class="flex justify-around items-center gap-2 mx-auto">
 
                     <div class="flex flex-col w-1/3 items-center justify-center">
-                        <div :style="{ backgroundColor: '{{ $jornada->color->hex_code }}' }"
-                            class="w-12 h-12 rounded-full border-2 border-black"></div>
-                        <p class="text-center"> {{ $jornada->user->name }}</p>
+                        @if ($jornada->user->image)
+                            <img src="{{ asset('storage/imagenes-perfil/' . $jornada->user->image) }}"
+                                alt="{{ 'Imagen del equipo ' . $jornada->user->name }}" class="w-12 h-12 rounded-full">
+                        @endif
+                        <p class="text- font-bold"> {{ $jornada->user->name }}</p>
                         <p class="font-bold text-xl">{{ $jornada->goles_favor }}</p>
                     </div>
 
