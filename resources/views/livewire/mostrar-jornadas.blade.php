@@ -28,7 +28,7 @@
 
                 <div class="mt-5 flex flex-col items-center">
                     <h3>Jornada: {{ $jornada->jornada }}</h3>
-                    <p>Fecha: {{ $jornada->fecha->locale('es_ES')->isoFormat('dddd D \\d\\e\\l Y') }}</p>
+                    <p>Fecha: {{ $jornada->fecha->locale('es_ES')->isoFormat('dddd D \\d\\e MMMM \\d\\e\\l Y') }}</p>
                 </div>
                 <div class="flex justify-center mt-2 gap-3">
                     <a href="{{ route('jornada.edit', $jornada->id) }}"
