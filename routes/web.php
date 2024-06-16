@@ -12,6 +12,7 @@ Route::get('/', function () {
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/crear-jornada', [AdminController::class, 'create'])->middleware(['auth', 'verified'])->name('jornada.create');
+Route::get('/admin/{jornada}/editar-jornada', [AdminController::class, 'edit'])->middleware(['auth', 'verified'])->name('jornada.edit');
 
 
 Route::middleware('auth')->group(function () {

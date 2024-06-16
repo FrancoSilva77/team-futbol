@@ -30,6 +30,16 @@
                     <h3>Jornada: {{ $jornada->jornada }}</h3>
                     <p>Fecha: {{ $jornada->fecha->locale('es_ES')->isoFormat('dddd D \\d\\e\\l Y') }}</p>
                 </div>
+                <div class="flex justify-center mt-2 gap-3">
+                    <a href="{{ route('jornada.edit', $jornada->id) }}"
+                        class="bg-yellow-400 py-2 items-center text-center px-4 rounded-lg text-white text-xs font-bold uppercase">
+                        Editar
+                    </a>
+                    <a href=""
+                        class="bg-red-600 py-2 items-center text-center px-4 rounded-lg text-white text-xs font-bold uppercase">
+                        Eliminar
+                    </a>
+                </div>
             </div>
         @empty
             <p class="p-3 text-center text-sm text-gray-600">Registra tu primer resultado</p>

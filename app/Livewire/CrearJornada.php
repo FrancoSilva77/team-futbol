@@ -25,7 +25,7 @@ class CrearJornada extends Component
         'fecha' => 'required'
     ];
 
-    public function crearVacante()
+    public function crearJornada()
     {
         $data = $this->validate();
 

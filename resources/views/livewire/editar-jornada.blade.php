@@ -1,4 +1,4 @@
-<form class="md:w-1/3 space-y-5" wire:submit.prevent='crearJornada'>
+<form class="md:w-1/3 space-y-5" wire:submit.prevent='editarVacante'>
     <div>
         <x-input-label for="jornada" :value="__('Número de Jornada')" />
         <x-text-input id="jornada" class="block mt-1 w-full" type="number" wire:model="jornada" :value="old('jornada')"
