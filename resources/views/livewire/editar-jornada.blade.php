@@ -48,5 +48,5 @@
         <x-input-error :messages="$errors->get('fecha')" class="mt-2" />
     </div>
 
-    <x-primary-button>Crear Jornada</x-primary-button>
+    <x-primary-button>Guardar Cambios</x-primary-button>
 </form>
