@@ -35,10 +35,10 @@
                         class="bg-yellow-400 py-2 items-center text-center px-4 rounded-lg text-white text-xs font-bold uppercase">
                         Editar
                     </a>
-                    <a href=""
+                    <button wire:click="$dispatch('mostrarAlerta', { jornada_id:{{ $jornada->id }} })"
                         class="bg-red-600 py-2 items-center text-center px-4 rounded-lg text-white text-xs font-bold uppercase">
                         Eliminar
-                    </a>
+                    </button>
                 </div>
             </div>
         @empty
@@ -51,3 +51,36 @@
     </div>
 
 </div>
+
+@push('scripts')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        Livewire.on('mostrarAlerta', ({
+            jornada_id
+        }) => {
+            Swal.fire({
+                title: 'Eliminar Jornada',
+                text: "Una jornada eliminada no se puede recuperar",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, Eliminar!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Livewire.dispatch('eliminarJornada', {
+                        jornada: jornada_id
+                    })
+
+                    Swal.fire(
+                        'Se elimino la jornada',
+                        'Eliminada Correctamente',
+                        'success'
+                    )
+                }
+            })
+        })
+    </script>
+@endpush
