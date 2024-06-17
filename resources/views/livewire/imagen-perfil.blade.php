@@ -16,7 +16,7 @@
 
             @if (auth()->user()->image)
                 <img src="{{ asset('storage/imagenes-perfil/' . auth()->user()->image) }}"
-                    alt="{{ 'Imagen Equipo ' . auth()->user()->name }}">
+                    alt="{{ 'Imagen Equipo ' . auth()->user()->name }}" class="w-64 h-64 object-cover object-center rounded-full">
             @endif
 
             <div class="my-5 w-80">

@@ -8,9 +8,9 @@
                     <div class="flex flex-col w-1/3 items-center justify-center">
                         @if ($jornada->user->image)
                             <img src="{{ asset('storage/imagenes-perfil/' . $jornada->user->image) }}"
-                                alt="{{ 'Imagen del equipo ' . $jornada->user->name }}" class="w-12 h-12 rounded-full">
+                                alt="{{ 'Imagen del equipo ' . $jornada->user->name }}" class="w-12 h-12 rounded-full object-cover object-center">
                         @endif
-                        <p class="text- font-bold"> {{ $jornada->user->name }}</p>
+                        <p class="text-center font-bold"> {{ $jornada->user->name }}</p>
                         <p class="font-bold text-xl">{{ $jornada->goles_favor }}</p>
                     </div>
 
@@ -19,7 +19,7 @@
                     <div class="flex flex-col justify-around items-center w-1/3">
                         <div :style="{ backgroundColor: '{{ $jornada->color->hex_code }}' }"
                             class="w-12 h-12 rounded-full border-2 border-black"></div>
-                        <p class="text-center ">{{ $jornada->equipo_contrario }}</p>
+                        <p class="text-center">{{ $jornada->equipo_contrario }}</p>
                         <p class="font-bold text-xl">{{ $jornada->goles_contra }}</p>
                     </div>
 
